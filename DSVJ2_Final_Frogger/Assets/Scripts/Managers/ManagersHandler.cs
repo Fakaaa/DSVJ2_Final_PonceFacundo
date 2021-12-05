@@ -65,7 +65,13 @@ public class ManagersHandler : MonoBehaviour
     
     #region GAME_MANAGER
 
-    //Something
+    public void ActivatePause()
+    {
+        if (CheckIfGameMngIsNull())
+            return;
+
+        gameMng.IsGamePause = !gameMng.IsGamePause;
+    }
 
     #endregion
 }

@@ -17,11 +17,11 @@ MonoBehaviour:
     id: 2
     isEndOfGame: 0
     layout:
-    - nameLayout: Cars_1
+    - nameLayout: Obstacles_1
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
-    - nameLayout: Cars_2
+    - nameLayout: Obstacles_2
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
@@ -29,15 +29,15 @@ MonoBehaviour:
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
-    - nameLayout: Cars_1
+    - nameLayout: Obstacles_1
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
-    - nameLayout: Cars_2
+    - nameLayout: Obstacles_2
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
-    - nameLayout: Cars_3
+    - nameLayout: Obstacles_3
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}

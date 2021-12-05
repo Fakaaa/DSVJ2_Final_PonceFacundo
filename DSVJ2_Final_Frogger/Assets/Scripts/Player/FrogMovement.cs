@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FrogMovement : MonoBehaviour
 {
-    [SerializeField] public int jumpUnits;
-    [SerializeField] public float rotationSpeed;
+    [SerializeField] int jumpUnits;
+    [SerializeField] float rotationSpeed;
 
     Vector3 actualDirection;
     bool rotateEnded = true;
     bool inteedMove = false;
+    bool isGamePaused = false;
 
     void Start()
     {
@@ -18,6 +19,9 @@ public class FrogMovement : MonoBehaviour
 
     void Update()
     {
+        if (isGamePaused)
+            return;
+
         if(Input.GetKeyDown(KeyCode.W) && rotateEnded)
         {
             inteedMove = true;
@@ -42,6 +46,11 @@ public class FrogMovement : MonoBehaviour
         MoveDirection(actualDirection);
     }
 
+    public void AvoidPlayerJumpOnPause()
+    {
+        isGamePaused = !isGamePaused;
+    }
+
     public void MoveDirection(Vector3 direction)
     {
         if(inteedMove)
@@ -49,6 +58,7 @@ public class FrogMovement : MonoBehaviour
             if(RotateFrogInDirection())
             {
                 transform.position += direction * jumpUnits;
+
                 actualDirection = direction;
 
                 inteedMove = false;
@@ -65,8 +75,6 @@ public class FrogMovement : MonoBehaviour
     public bool RotateFrogInDirection()
     {
         Quaternion targetRotation = Quaternion.LookRotation(actualDirection, transform.up);
-
-        Debug.Log(targetRotation);
 
         if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
         {

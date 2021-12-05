@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b52d403d069d55f45a73c90a0a51fb7e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hungry Charlie
+  fontNames:
+  - Hungry Charlie
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 40623cf3238d17a4bbaf6127dbeb5da4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

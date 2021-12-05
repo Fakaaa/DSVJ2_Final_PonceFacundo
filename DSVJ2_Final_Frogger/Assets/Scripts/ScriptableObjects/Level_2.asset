@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc7ea89af22a8e448b2029ad272e9f2, type: 3}
+  m_Name: Level_2
+  m_EditorClassIdentifier: 
+  levelData:
+    levelName: level2
+    id: 2
+    isEndOfGame: 0
+    layout:
+    - nameLayout: Cars_1
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Cars_2
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Intersection
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Cars_1
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Cars_2
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Cars_3
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Intersection
+      active: 1
+      endOfLevel: 0
+      prefabLayout: {fileID: 0}
+    - nameLayout: Finish
+      active: 1
+      endOfLevel: 1
+      prefabLayout: {fileID: 0}

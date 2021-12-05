@@ -71,7 +71,11 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
             theFrogInteractions = FindObjectOfType<Frog>();
             theFrogInteractions.SetRemainingLives(remainingLives);
             theFrogInteractions.onFrogDeath += PlayerLosesLife;
+
             theFrogInteractions.onFrogLose += PlayerLoseGame;
+            
+            theFrogInteractions.onFrogSmashed += PlayerCantMove;
+            theFrogInteractions.onFrogDeath += PlayerCantMove;
         }
     }
 
@@ -91,6 +95,11 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     {
         remainingLives--;
         theFrogInteractions.SetRemainingLives(remainingLives);
+    }
+
+    void PlayerCantMove()
+    {
+        theFrogMovement.AvoidPlayerMoveOnDie();
     }
 
     void CalculateTime()

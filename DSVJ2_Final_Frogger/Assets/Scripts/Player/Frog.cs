@@ -10,6 +10,7 @@ public class Frog : MonoBehaviour
 
     public UnityAction onFrogDeath;
     public UnityAction onFrogLose;
+    public UnityAction onFrogSmashed;
     [SerializeField] LayerMask avoidCollision;
     [SerializeField] Animator myAnimator;
     BoxCollider colliderFrog;
@@ -45,6 +46,7 @@ public class Frog : MonoBehaviour
         {
             myAnimator.SetTrigger("Die");
             colliderFrog.enabled = false;
+            onFrogSmashed?.Invoke();
         }
     }
 }

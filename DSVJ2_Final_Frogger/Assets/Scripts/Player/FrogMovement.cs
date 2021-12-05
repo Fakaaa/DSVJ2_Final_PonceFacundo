@@ -11,6 +11,7 @@ public class FrogMovement : MonoBehaviour
     bool rotateEnded = true;
     bool inteedMove = false;
     bool isGamePaused = false;
+    bool isFrogSmahed = false;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class FrogMovement : MonoBehaviour
 
     void Update()
     {
-        if (isGamePaused)
+        if (isGamePaused || isFrogSmahed)
             return;
 
         if(Input.GetKeyDown(KeyCode.W) && rotateEnded)
@@ -44,6 +45,11 @@ public class FrogMovement : MonoBehaviour
         }
 
         MoveDirection(actualDirection);
+    }
+
+    public void AvoidPlayerMoveOnDie()
+    {
+        isFrogSmahed = !isFrogSmahed;
     }
 
     public void AvoidPlayerJumpOnPause()

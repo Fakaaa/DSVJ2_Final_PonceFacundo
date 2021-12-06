@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         remainingLives = 3;
         scorePlayer = 0;
         timePass = 0;
+        idActualLvl = 1;
     }
 
     void FindFrog()

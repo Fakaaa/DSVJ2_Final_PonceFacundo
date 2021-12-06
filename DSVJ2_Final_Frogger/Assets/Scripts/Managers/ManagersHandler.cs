@@ -82,4 +82,15 @@ public class ManagersHandler : MonoBehaviour
     }
 
     #endregion
+
+    public void SetNextLevel()
+    {
+        if (CheckIfGameMngIsNull())
+            return;
+
+        if(gameMng.SetNextLevel())
+            LoadScene("Gameplay");
+        else
+            LoadScene("MainMenu");
+    }
 }

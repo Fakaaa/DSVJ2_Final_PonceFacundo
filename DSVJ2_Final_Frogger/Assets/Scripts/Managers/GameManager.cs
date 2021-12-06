@@ -121,7 +121,19 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public void PlayerPassLevel()
     {
         onEndLevel?.Invoke(false);
-        idActualLvl++;
     }
 
+    public bool SetNextLevel()
+    {
+        if (idActualLvl < 3)
+        {
+            idActualLvl++;
+            return true;
+        }
+        else
+        {
+            Debug.Log("Terminaste todos los levels");
+            return false;
+        }
+    }
 }

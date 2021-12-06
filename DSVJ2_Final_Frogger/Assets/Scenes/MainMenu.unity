@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   versionText: {fileID: 1910581790}
+  animSplahs: {fileID: 982398134}
 --- !u!95 &982398134
 Animator:
   serializedVersion: 3

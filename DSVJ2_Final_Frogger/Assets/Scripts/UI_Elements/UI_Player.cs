@@ -17,10 +17,22 @@ public class UI_Player : MonoBehaviour
     {
         gmReference = FindObjectOfType<GameManager>();
 
-        if(gmReference != null)
+        endMenu = gameObject.GetComponentInChildren<UI_EndMenu>();
+        endMenu.gameObject.SetActive(false);
+
+        if (gmReference != null)
         {
             gmReference.onUIUpdate += UpdateUIPlayer;
             gmReference.onEndLevel += EnableEndScreen;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (gmReference != null)
+        {
+            gmReference.onUIUpdate -= UpdateUIPlayer;
+            gmReference.onEndLevel -= EnableEndScreen;
         }
     }
 

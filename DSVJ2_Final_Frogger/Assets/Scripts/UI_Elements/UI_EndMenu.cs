@@ -22,7 +22,10 @@ public class UI_EndMenu : MonoBehaviour
     {
         if(wasDefeat)
         {
-            nextButton.enabled = false;
+            if(nextButton != null)
+            {
+                nextButton.enabled = false;
+            }
             textStatus.text = "Lose";
             finalScore.text = managerGMref.gameMng.scorePlayer.ToString();
             finalTime.text = managerGMref.gameMng.timePass.ToString("0");

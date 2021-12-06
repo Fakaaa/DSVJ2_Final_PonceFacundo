@@ -9,6 +9,7 @@ public class UI_Player : MonoBehaviour
     [SerializeField] TextMeshProUGUI lives;
     [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI time;
+    [SerializeField] UI_EndMenu endMenu;
 
     GameManager gmReference;
 
@@ -19,6 +20,7 @@ public class UI_Player : MonoBehaviour
         if(gmReference != null)
         {
             gmReference.onUIUpdate += UpdateUIPlayer;
+            gmReference.onEndLevel += EnableEndScreen;
         }
     }
 
@@ -30,5 +32,12 @@ public class UI_Player : MonoBehaviour
         lives.text = "Lives: " + gmReference.remainingLives;
         score.text = "Score: " + gmReference.scorePlayer;
         time.text = gmReference.timePass.ToString("0");
+    }
+
+    public void EnableEndScreen(bool wasDefeat)
+    {
+        endMenu.SetStatusCondition(wasDefeat);
+        endMenu.SetStatus();
+        endMenu.gameObject.SetActive(true);
     }
 }

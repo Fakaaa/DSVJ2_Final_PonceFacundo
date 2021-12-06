@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
-    [SerializeField] List<Level> levels;
     
     public bool IsGamePause
     {
@@ -21,7 +20,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     [Space(10),Header("Crucial Information")]
     [SerializeField] bool paused;
-    [SerializeField] Level actualLevel;
     [SerializeField] public int remainingLives;
     [SerializeField] public int scorePlayer;
     [SerializeField] public float timePass;
@@ -29,12 +27,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     [SerializeField] FrogMovement theFrogMovement;
     [SerializeField] Frog theFrogInteractions;
 
+    public int idActualLvl = 1;
     public UnityAction onUIUpdate;
-
-    void Start()
-    {
-        actualLevel = levels[0];
-    }
+    public UnityAction<bool> onEndLevel;
 
     void Update()
     {
@@ -54,10 +49,11 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
         CalculateTime();
     }
-
-    private void OnDisable()
+    public void ResetData()
     {
-        theFrogInteractions.onFrogDeath -= PlayerLosesLife;
+        remainingLives = 3;
+        scorePlayer = 0;
+        timePass = 0;
     }
 
     void FindFrog()
@@ -69,13 +65,16 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         if(theFrogInteractions == null)
         {
             theFrogInteractions = FindObjectOfType<Frog>();
-            theFrogInteractions.SetRemainingLives(remainingLives);
-            theFrogInteractions.onFrogDeath += PlayerLosesLife;
+            if(theFrogInteractions != null)
+            {
+                theFrogInteractions.SetRemainingLives(remainingLives);
+                theFrogInteractions.onFrogDeath += PlayerLosesLife;
 
-            theFrogInteractions.onFrogLose += PlayerLoseGame;
-            
-            theFrogInteractions.onFrogSmashed += PlayerCantMove;
-            theFrogInteractions.onFrogDeath += PlayerCantMove;
+                theFrogInteractions.onFrogLose += PlayerLoseGame;
+
+                theFrogInteractions.onFrogSmashed += PlayerCantMove;
+                theFrogInteractions.onFrogDeath += PlayerCanMove;
+            }
         }
     }
 
@@ -102,6 +101,11 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         theFrogMovement.AvoidPlayerMoveOnDie();
     }
 
+    void PlayerCanMove()
+    {
+        theFrogMovement.ActivatePlayerMove();
+    }
+
     void CalculateTime()
     {
         timePass += Time.deltaTime;
@@ -111,6 +115,13 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     
     void PlayerLoseGame()
     {
-
+        onEndLevel?.Invoke(true);
     }
+
+    public void PlayerPassLevel()
+    {
+        onEndLevel?.Invoke(false);
+        idActualLvl++;
+    }
+
 }

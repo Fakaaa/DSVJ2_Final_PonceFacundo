@@ -2,8 +2,8 @@
 
 public class ManagersHandler : MonoBehaviour
 {
-    private SceneLoader sceneMng;
-    private GameManager gameMng;
+    public SceneLoader sceneMng;
+    public GameManager gameMng;
 
     void Start()
     {
@@ -71,6 +71,14 @@ public class ManagersHandler : MonoBehaviour
             return;
 
         gameMng.IsGamePause = !gameMng.IsGamePause;
+    }
+
+    public void ResetDataGameMngr()
+    {
+        if (CheckIfGameMngIsNull())
+            return;
+
+        gameMng.ResetData();
     }
 
     #endregion

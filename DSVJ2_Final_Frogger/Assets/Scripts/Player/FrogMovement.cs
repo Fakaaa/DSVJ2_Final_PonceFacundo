@@ -49,7 +49,12 @@ public class FrogMovement : MonoBehaviour
 
     public void AvoidPlayerMoveOnDie()
     {
-        isFrogSmahed = !isFrogSmahed;
+        isFrogSmahed = true;
+    }
+
+    public void ActivatePlayerMove()
+    {
+        isFrogSmahed = false;
     }
 
     public void AvoidPlayerJumpOnPause()

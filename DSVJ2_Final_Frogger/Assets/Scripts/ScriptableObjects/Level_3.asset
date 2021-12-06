@@ -20,48 +20,24 @@ MonoBehaviour:
     - nameLayout: Obstacles_1
       active: 1
       endOfLevel: 0
-      prefabLayout: {fileID: 0}
+      prefabLayout: {fileID: 2801567603152066149, guid: 7020394577266be48bb29ce45a7e47ee,
+        type: 3}
     - nameLayout: Obstacles_2
       active: 1
       endOfLevel: 0
-      prefabLayout: {fileID: 0}
+      prefabLayout: {fileID: 5765746021941817166, guid: cceaf216238b47d4cb7c5676aee6ddb8,
+        type: 3}
     - nameLayout: Obstacles_3
       active: 1
       endOfLevel: 0
-      prefabLayout: {fileID: 0}
+      prefabLayout: {fileID: 1429187362155734353, guid: d5e73149a99d9a7429007029f64547fe,
+        type: 3}
     - nameLayout: Intersection
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Obstacles_2
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Obstacles_3
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: River
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Obstacles_1
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Obstacles_2
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Intersection
-      active: 1
-      endOfLevel: 0
-      prefabLayout: {fileID: 0}
-    - nameLayout: Obstacles_3
       active: 1
       endOfLevel: 0
       prefabLayout: {fileID: 0}
     - nameLayout: Finish
       active: 1
       endOfLevel: 1
-      prefabLayout: {fileID: 0}
+      prefabLayout: {fileID: 1212709788347419783, guid: 69ace830114d3ec4f90fa19afd543549,
+        type: 3}

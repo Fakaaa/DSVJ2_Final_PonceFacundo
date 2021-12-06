@@ -28,6 +28,13 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < respawnCheckPoints.Count; i++)
+        {
+            if(respawnCheckPoints[i] != null)
+            {
+                Instantiate(actualLevel.levelData.layout[i].prefabLayout, respawnCheckPoints[i].position, actualLevel.levelData.layout[i].prefabLayout.transform.rotation);
+            }
+        }
     }
 
     void Update()

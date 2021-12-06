@@ -35,7 +35,8 @@ MonoBehaviour:
     - nameLayout: Intersection
       active: 1
       endOfLevel: 0
-      prefabLayout: {fileID: 0}
+      prefabLayout: {fileID: 7103364181344960497, guid: 273717a0c19207149b7e50389d2a730d,
+        type: 3}
     - nameLayout: Finish
       active: 1
       endOfLevel: 1

@@ -19,8 +19,8 @@ public class Splash1 : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("Splash1", false);
-        animator.SetBool("Splash2", true);
+        animator.GetComponent<Splash1_Script>().ActivateSplash2();
+        Destroy(animator.gameObject, 0.5f);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
